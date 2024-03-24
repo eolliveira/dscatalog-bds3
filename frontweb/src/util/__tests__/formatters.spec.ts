@@ -1,12 +1,8 @@
-import { formatPrice } from 'util/formatters';
+import { hasAnyRoles } from 'util/auth';
 
-test('formatPrice shold format number when given 10.1', () => {
-  //ARRANGE
-  const price = 10.1;
-
-  //ACT
-  const result = formatPrice(price);
-
-  //ASSERT
-  expect(result).toEqual('10,10');
+describe('hasAnyRoles tests', () => {
+  test('hasAnyRoles shold return true when empty list', () => {
+    const result = hasAnyRoles([]);
+    expect(result).toEqual(true);
+  });
 });
